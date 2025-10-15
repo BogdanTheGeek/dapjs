@@ -55,7 +55,7 @@ export class WebHID implements Transport {
         }
 
         const arrayBuffer = isView(data) ? data.buffer : data;
-        const length = Math.min(arrayBuffer.byteLength, packetSize);
+        const length = Math.max(arrayBuffer.byteLength, packetSize);
 
         const result = new Uint8Array(length);
         result.set(new Uint8Array(arrayBuffer));
@@ -70,7 +70,7 @@ export class WebHID implements Transport {
     public async open(): Promise<void> {
         // eslint-disable-next-line no-console
         console.log('Opening device:', this.device);
-        await this.device.open();
+        return await this.device.open();
     }
 
     /**
@@ -80,7 +80,7 @@ export class WebHID implements Transport {
     public async close(): Promise<void> {
         // eslint-disable-next-line no-console
         console.log('Closeing device:', this.device);
-        await this.device.close();
+        return await this.device.close();
     }
 
     /**
@@ -105,6 +105,7 @@ export class WebHID implements Transport {
     public async write(data: BufferSource): Promise<void> {
 
         const buffer = this.extendBuffer(data, this.packetSize);
-        await this.device.sendReport(0x00, buffer);
+        // console.log('Writing to device:', buffer);
+        return await this.device.sendReport(0x00, buffer);
     }
 }

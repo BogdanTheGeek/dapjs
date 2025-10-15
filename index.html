@@ -136,7 +136,7 @@
 
             try {
                 const devices = await navigator.hid.requestDevice({
-                    filters: [{vendorId: 0x1209, usagePage: 0xff00, usage: 0x0002}]
+                    filters: [{vendorId: 0x1209}]
                 });
                 devices[0].oninputreport = event => {
                     console.log(event.data);
@@ -153,7 +153,7 @@
             setStatus("选择重启设备...");
             try {
                 const devices = await navigator.hid.requestDevice({
-                    filters: [{vendorId: 0x1209, usagePage: 0xff00, usage: 0x0002}]
+                    filters: [{vendorId: 0x1209}]
                 });
                 devices[0].oninputreport = event => {
                     console.log(event.data);
