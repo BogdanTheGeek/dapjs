@@ -28,7 +28,7 @@
         const count = 16;
 
         const readRegisters = async (device, count) => {
-            const transport = new DAPjs.WebUSB(device);
+            const transport = new DAPjs.WebHID(device);
             const processor = new DAPjs.CortexM(transport);
 
             await processor.connect();
@@ -44,15 +44,42 @@
             return result;
         };
 
+        const reset = async device => {
+            const transport = new DAPjs.WebHID(device);
+            const processor = new DAPjs.CortexM(transport);
+
+            try {
+               console.log("reset");
+                await processor.connect();
+                await processor.softReset();
+                await processor.disconnect();
+               await transport.close();
+               console.log("reset complete");
+
+            } catch (error) {
+               console.error(error);
+            }
+        }
+
         document.getElementById("read").onclick = async () => {
-            const device = await navigator.usb.requestDevice({
-                filters: [{vendorId: 0xD28}]
-            });
-            const values = await readRegisters(device, count);
-            values.forEach((value, index) => {
-                const registerEl = document.getElementById(`r${index}`);
-                registerEl.innerHTML = `Register ${index}: ${value}`;
-            });
+            try {
+               const devices = await navigator.hid.requestDevice({
+                  filters: [{vendorId: 0x1209}]
+               });
+               devices[0].oninputreport = event => {
+                  console.log(event.data);
+               }
+               const device = devices[0];
+               //await reset(device);
+               console.log(device);
+               const values = await readRegisters(device, count);
+               values.forEach((value, index) => {
+                  const registerEl = document.getElementById(`r${index}`);
+                  registerEl.innerHTML = `Register ${index}: ${value}`;
+               });
+            } catch (error) {
+               console.error(error);
+            }
         };
 
         for (let index = 0; index < count; index++) {

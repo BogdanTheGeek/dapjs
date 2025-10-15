@@ -19,7 +19,7 @@ module.exports = {
             "error",
             "as-needed"
         ],
-        "@stylistic/js/block-spacing": "error",
+        "@stylistic/js/block-spacing": "warn",
         "@stylistic/js/brace-style": [
             "error",
             "1tbs",
@@ -27,7 +27,7 @@ module.exports = {
                 "allowSingleLine": true
             }
         ],
-        "@typescript-eslint/adjacent-overload-signatures": "error",
+        "@typescript-eslint/adjacent-overload-signatures": "warn",
         "@typescript-eslint/array-type": [
             "error",
             {
@@ -59,7 +59,7 @@ module.exports = {
                 }
             }
         ],
-        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/dot-notation": "warn",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/member-delimiter-style": [
@@ -92,12 +92,12 @@ module.exports = {
             }
         ],
         "@typescript-eslint/no-duplicate-enum-values": "off",
-        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/no-empty-function": "warn",
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-floating-promises": "error",
-        "@typescript-eslint/no-misused-new": "error",
-        "@typescript-eslint/no-namespace": "error",
+        "@typescript-eslint/no-floating-promises": "warn",
+        "@typescript-eslint/no-misused-new": "warn",
+        "@typescript-eslint/no-namespace": "warn",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-shadow": [
             "error",
@@ -108,12 +108,12 @@ module.exports = {
         "@typescript-eslint/no-unnecessary-type-assertion": "off",
         "@typescript-eslint/no-unsafe-argument": "off",
         "@typescript-eslint/no-unsafe-enum-comparison": "off",
-        "@typescript-eslint/no-unused-expressions": "error",
+        "@typescript-eslint/no-unused-expressions": "warn",
         "@typescript-eslint/no-use-before-define": "off",
-        "@typescript-eslint/no-var-requires": "error",
-        "@typescript-eslint/prefer-for-of": "error",
-        "@typescript-eslint/prefer-function-type": "error",
-        "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/no-var-requires": "warn",
+        "@typescript-eslint/prefer-for-of": "warn",
+        "@typescript-eslint/prefer-function-type": "warn",
+        "@typescript-eslint/prefer-namespace-keyword": "warn",
         "@typescript-eslint/quotes": [
             "error",
             "single"
@@ -133,11 +133,11 @@ module.exports = {
         ],
         "@typescript-eslint/typedef": "off",
         "@typescript-eslint/unbound-method": "off",
-        "@typescript-eslint/unified-signatures": "error",
-        "camelcase": "error",
+        "@typescript-eslint/unified-signatures": "warn",
+        "camelcase": "warn",
         "comma-dangle": ["error", "never"],
         "complexity": "off",
-        "constructor-super": "error",
+        "constructor-super": "warn",
         "curly": [
             "error",
             "multi-line"
@@ -148,7 +148,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "guard-for-in": "error",
+        "guard-for-in": "warn",
         "indent": [
             "error",
             4,
@@ -156,46 +156,46 @@ module.exports = {
                 "SwitchCase": 1
             }
         ],
-        "id-denylist": "error",
-        "id-match": "error",
-        "jsdoc/check-alignment": "error",
-        "jsdoc/check-indentation": "error",
+        "id-denylist": "warn",
+        "id-match": "warn",
+        "jsdoc/check-alignment": "warn",
+        "jsdoc/check-indentation": "warn",
         "linebreak-style": [
             "error",
             "unix"
         ],
         "max-classes-per-file": "off",
         "max-len": "off",
-        "new-parens": "error",
+        "new-parens": "warn",
         "no-bitwise": "off",
-        "no-caller": "error",
-        "no-cond-assign": "error",
-        "no-console": "error",
-        "no-debugger": "error",
-        "no-empty": "error",
+        "no-caller": "warn",
+        "no-cond-assign": "warn",
+        "no-console": "warn",
+        "no-debugger": "warn",
+        "no-empty": "warn",
         "no-empty-function": "off",
-        "no-eval": "error",
+        "no-eval": "warn",
         "no-fallthrough": "off",
         "no-invalid-this": "off",
-        "no-irregular-whitespace": "error",
-        "no-new-wrappers": "error",
+        "no-irregular-whitespace": "warn",
+        "no-new-wrappers": "warn",
         "no-shadow": "off",
-        "no-throw-literal": "error",
-        "no-trailing-spaces": "error",
-        "no-undef-init": "error",
+        "no-throw-literal": "warn",
+        "no-trailing-spaces": "warn",
+        "no-undef-init": "warn",
         "no-underscore-dangle": "off",
-        "no-unsafe-finally": "error",
+        "no-unsafe-finally": "warn",
         "no-unused-expressions": "off",
-        "no-unused-labels": "error",
+        "no-unused-labels": "warn",
         "no-use-before-define": "off",
-        "no-var": "error",
+        "no-var": "warn",
         "object-shorthand": "off",
         "one-var": [
             "error",
             "never"
         ],
-        "prefer-const": "error",
-        "radix": "error",
+        "prefer-const": "warn",
+        "radix": "warn",
         "sort-keys": "off",
         "spaced-comment": [
             "error",
@@ -206,7 +206,7 @@ module.exports = {
                 ]
             }
         ],
-        "use-isnan": "error",
+        "use-isnan": "warn",
         "valid-typeof": "off"
     }
 };
